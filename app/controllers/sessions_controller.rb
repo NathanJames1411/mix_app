@@ -15,6 +15,9 @@ class SessionsController < ApplicationController
         flash[:warning] = message
         redirect_to root_url
       end
+    # elsif (user_id = cookies.signed[:user_id])
+    #   raise
+    #   user = User.find_by(id: user_id)
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
